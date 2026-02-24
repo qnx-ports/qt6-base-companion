@@ -1,0 +1,29 @@
+diff --git a/cmake/QtMkspecHelpers.cmake b/cmake/QtMkspecHelpers.cmake
+index a7f239f1..81dc2610 100644
+--- a/cmake/QtMkspecHelpers.cmake
++++ b/cmake/QtMkspecHelpers.cmake
+@@ -67,11 +67,6 @@ macro(qt_internal_setup_platform_definitions_and_mkspec)
+             set(QT_DEFAULT_MKSPEC wasm-emscripten)
+         endif()
+     elseif(QNX)
+-        # Certain POSIX defines are not set if we don't compile with -std=gnuXX
+-        set(QT_ENABLE_CXX_EXTENSIONS ON)
+-
+-        list(APPEND QT_DEFAULT_PLATFORM_DEFINITIONS _FORTIFY_SOURCE=2 _REENTRANT)
+-
+         set(compiler_aarch64le aarch64le)
+         set(compiler_armle-v7 armv7le)
+         set(compiler_x86-64 x86_64)
+diff --git a/mkspecs/qnx-aarch64le-qcc/qmake.conf b/mkspecs/qnx-aarch64le-qcc/qmake.conf
+index 754bc273..b3904939 100644
+--- a/mkspecs/qnx-aarch64le-qcc/qmake.conf
++++ b/mkspecs/qnx-aarch64le-qcc/qmake.conf
+@@ -2,8 +2,6 @@
+ # qmake configuration for qnx aarch64le systems
+ #
+ 
+-DEFINES += _FORTIFY_SOURCE=2
+-
+ QMAKE_LFLAGS_SHLIB += -Wl,-z,relro -Wl,-z,now
+ 
+ include(../common/qcc-base-qnx-aarch64le.conf)
