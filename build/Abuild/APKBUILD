@@ -2,7 +2,7 @@
 # Maintainer: Felix Xing <fxing@qnx.com>
 pkgname=qt6-base
 pkgver=6.10.0
-pkgrel=${pkgrel:-0}
+pkgrel=1
 pkgdesc="A cross-platform application and UI framework"
 url="https://qt.io/"
 arch="all"
@@ -182,7 +182,6 @@ sqlite() {
     amove usr/lib/qt6/plugins/sqldrivers/libqsqlite*
 }
 
-options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 bc3b98f8b2387ca207f6cd87478bdefa911442fd9981d38ecd8793856439e415ce9182b524dabc6b0a1ba5c27e22badfc7ca67a0a43e00186ee6865886937917  qtbase-everywhere-src-6.10.0.tar.xz
 e41d15344420448894b172d8c5cfed8b1b5e3e2d55a7bd7a9641b436aed944ef65501946b6961613e8c589f597c8111f8ae9c77d9382aa82d31345dc4e42ec91  001-enable-file-base-clipboard.patch
